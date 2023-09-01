@@ -7,19 +7,23 @@ const centerY = canvas.height / 2;
 const scale = 40; // Escala para convertir coordenadas en píxeles
 
 const drawButton = document.querySelector('.draw-btn');
-let figure = [{ x: 2, y: 1 }, { x: 1, y: 2 }, { x: 2, y: 3 }];
+const points = []; // Arreglo para almacenar los puntos
 
-drawButton.addEventListener('click', function () {
-    const x1 = Number(document.getElementById('x1').value);
-    const y1 = Number(document.getElementById('y1').value);
-    const x2 = Number(document.getElementById('x2').value);
-    const y2 = Number(document.getElementById('y2').value);
-    const x3 = Number(document.getElementById('x3').value);
-    const y3 = Number(document.getElementById('y3').value);
-     
-})
+canvas.addEventListener('click', function (event) {
+    // Obtener las coordenadas del evento y convertirlas a coordenadas cartesianas
+    const x = (event.clientX - canvas.getBoundingClientRect().left - centerX) / scale;
+    const y = -(event.clientY - canvas.getBoundingClientRect().top - centerY) / scale;
 
-// Función para dibujar ejes
+    // Agregar el punto al arreglo
+    points.push({ x, y });
+
+    // Dibujar la figura con los puntos actualizados
+    drawFigure(points);
+    console.log(points);
+});
+
+// Resto de tu código (funciones drawAxes, drawNumbers, updateCanvas, etc.)
+
 function drawAxes() {
     context.beginPath();
     context.moveTo(0, centerY);
@@ -54,7 +58,13 @@ function drawNumbers() {
     }
 }
 
+
+// Función para dibujar la figura
 function drawFigure(points) {
+    context.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el lienzo
+    drawAxes();
+    drawNumbers();
+
     context.fillStyle = "#364b43";
     context.beginPath();
     context.moveTo(centerX + (points[0].x * scale), centerY - (points[0].y * scale));
@@ -68,11 +78,13 @@ function drawFigure(points) {
 }
 
 
+ 
 
+// Resto de tu código (updateCanvas, etc.)
 function updateCanvas() {
     drawAxes();
     drawNumbers();
-    drawFigure(figure);
+    //drawFigure(figure);
 }
 
 
