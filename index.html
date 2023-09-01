@@ -14,11 +14,42 @@
 <body>
     <main>
         <h1 class="title">Tansformaciones bidimencionales traslación, escalamiento, rotación y sesgado.</h1>
-
-        <div class="divider"></div>
         <canvas id="planoCartesiano" width="900" height="900"></canvas>
+
+        <section class="inputs-container">
+
+            <div class="input-col">
+                <h3>Punto 1</h3>
+                <input id="x1" class="conrdenates-input" type="number" placeholder="x - 1" required>
+                <input id="y1" class="conrdenates-input" type="number" placeholder="y - 1" required>
+            </div>
+            <div class="input-col">
+                <h3>Punto 2</h3>
+                <input id="x2" class="conrdenates-input" type="number" placeholder="x - 2" required>
+                <input id="y2" class="conrdenates-input" type="number" placeholder="y - 2" required>
+            </div>
+            <div class="input-col">
+                <h3>Punto 3</h3>
+                <input id="x3" class="conrdenates-input" type="number" placeholder="x - 3" required>
+                <input id="y3" class="conrdenates-input" type="number" placeholder="y - 3" required>
+            </div>
+        </section>
+
+        <div class="buttons-container">
+            <button class="transform-btn">Traslación</button>
+            <button class="transform-btn">Escalamiento</button>
+            <button class="transform-btn">Rotación</button>
+            <button class="transform-btn">Sesgado</button>
+        </div>
+
+        <div class="draw">
+            <button class="draw-btn" type="submit">Dibujar poligono</button>
+        </div>
+
     </main>
 </body>
 <script src="main.js"></script>
 
 </html>
+
+<!-- //let figure = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }]; -->

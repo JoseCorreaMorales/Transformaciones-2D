@@ -6,6 +6,19 @@ const centerY = canvas.height / 2;
 
 const scale = 40; // Escala para convertir coordenadas en píxeles
 
+const drawButton = document.querySelector('.draw-btn');
+let figure = [{ x: 2, y: 1 }, { x: 1, y: 2 }, { x: 2, y: 3 }];
+
+drawButton.addEventListener('click', function () {
+    const x1 = Number(document.getElementById('x1').value);
+    const y1 = Number(document.getElementById('y1').value);
+    const x2 = Number(document.getElementById('x2').value);
+    const y2 = Number(document.getElementById('y2').value);
+    const x3 = Number(document.getElementById('x3').value);
+    const y3 = Number(document.getElementById('y3').value);
+     
+})
+
 // Función para dibujar ejes
 function drawAxes() {
     context.beginPath();
@@ -41,10 +54,26 @@ function drawNumbers() {
     }
 }
 
+function drawFigure(points) {
+    context.fillStyle = "#364b43";
+    context.beginPath();
+    context.moveTo(centerX + (points[0].x * scale), centerY - (points[0].y * scale));
+
+    for (let i = 1; i < points.length; i++) {
+        context.lineTo(centerX + (points[i].x * scale), centerY - (points[i].y * scale));
+    }
+
+    context.closePath();
+    context.fill();
+}
+
+
 
 function updateCanvas() {
     drawAxes();
     drawNumbers();
+    drawFigure(figure);
 }
+
 
 updateCanvas();

@@ -1,15 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/milliard');
 
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Milliard', sans-serif;
-
 }
 
 body {
-
     background-color: #e5e5f7;
     opacity: 0.8;
     background-image: linear-gradient(#364b43 1px, transparent 1px), linear-gradient(to right, #364b43 1px, #e5e5f7 1px);
@@ -18,7 +18,6 @@ body {
 
 main {
     height: 100%;
-
 }
 
 .title {
@@ -45,17 +44,108 @@ main {
 canvas {
     display: block;
     margin: 0 auto;
+    z-index: 999;
 }
 
-/* .title::after {
-    content: "";
-    display: block;
-    width: 140px;
-    margin-top: 5px;
-    height: 5px;
+/* ------------------------------------------inputs ------------------------------------------*/
+
+.inputs-container {
+    margin: 3.5rem 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* width: 90%; */
+
+}
+
+.input-col {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    row-gap: 3rem;
+}
+
+.input-col h3 {
+    text-align: center;
+}
+
+.conrdenates-input {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 0 15px;
+    height: 45px;
+    width: 90%;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.686);
+    font-size: 1rem;
+    margin: 0 auto;
+    color: #364b43;
+}
+
+
+/* ------------------------------------------button ------------------------------------------*/
+
+.btn-container {
+    background-color: #eee;
+}
+
+.buttons-container {
+    margin: 3% 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.transform-btn {
+    margin-right: .5rem;
+    background-color: transparent;
+    font-weight: semibold;
+    color: black;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: .5em .5rem 1rem #ccc,
+        -.5em -.5rem 1rem #fff;
+}
+
+.transform-btn:hover {
+    box-shadow: .5em .5rem 1rem #fff, -.5em -.5rem 1rem #ccc
+}
+
+.transform-btn:active {
+    box-shadow: inset .2rem .2rem 1rem #fff, inset -.2rem -.2rem 1rem #ccc
+}
+
+/* ------------------------------------------draw button ------------------------------------------*/
+
+.draw {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 10%;
+}
+
+.draw-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     background-color: #364b43;
-   
-} */
+    font-size: 16px;
+    cursor: pointer;
+    color: #7fdab8;
+    font-style: bold;
+   font-size: 1.2rem;
+    display: inline;
+    text-align: center;
 
+}
 
+.draw-btn:hover {
+    background-color: #5c8676;
+    color: #1c2b25;
+}
 
+.draw-btn:active {
+    background-color: #364b43;
+}
