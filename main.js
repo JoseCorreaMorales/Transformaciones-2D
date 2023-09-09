@@ -13,6 +13,7 @@ let figure = []; // Inicializa la variable 'figure'
 const translateButton = document.querySelector('.translate-btn');
 const scaleButton = document.querySelector('.scale-btn');
 const rotateButton = document.querySelector('.rotate-btn');
+const shearButton = document.querySelector('.shear-btn');
 
 
 canvas.addEventListener('click', function (event) {
@@ -22,7 +23,7 @@ canvas.addEventListener('click', function (event) {
 
     // Agregar el punto al arreglo
     points.push({ x, y });
-
+    console.log("puntos :", points)
     // Dibujar la figura con los puntos actualizados
     figure = points.slice(); // Copia los puntos a 'figure'
     drawFigure(figure);
@@ -71,7 +72,7 @@ function drawFigure(points) {
     drawAxes();
     drawNumbers();
 
-    context.fillStyle = "#364b43";
+    context.fillStyle = "#444cf7";
     context.beginPath();
 
     if (points && points.length > 0) { // Verificar si points tiene valores válidos
@@ -103,6 +104,13 @@ function rotateFigure(points, angleDegrees) {
     }));
 }
 
+function shearFigure(points, shearX, shearY) {
+    return points.map(point => ({
+        x: point.x + shearX * point.y,
+        y: point.y + shearY * point.x
+    }));
+}
+
 translateButton.addEventListener('click', function () {
     const dx = Number(document.getElementById('translateX').value);
     const dy = Number(document.getElementById('translateY').value);
@@ -121,6 +129,13 @@ scaleButton.addEventListener('click', function () {
 rotateButton.addEventListener('click', function () {
     const angleDegrees = Number(document.getElementById('rotateAngle').value);
     figure = rotateFigure(figure, angleDegrees);
+    updateCanvas();
+});
+
+shearButton.addEventListener('click', function () {
+    const shearX = Number(document.getElementById('shearX').value);
+    const shearY = Number(document.getElementById('shearY').value);
+    figure = shearFigure(figure, shearX, shearY);
     updateCanvas();
 });
 

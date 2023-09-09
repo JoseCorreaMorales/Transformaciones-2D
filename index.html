@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css">
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./normalize.css">
+    <link href="./styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="shortcut icon" href="data-analytics.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/data-analytics.svg" type="image/x-icon">
 
     <title>Transformaciones 2D</title>
 </head>
@@ -27,22 +27,24 @@
             </div>
             <div class="input-col">
                 <h1>Escalamiento</h1>
-                <input  class="conrdenates-input" type="number" placeholder="Escalamento en x" required>
-                <input  class="conrdenates-input" type="number" placeholder="Escalamiento en y" required>
+                <input id="scaleX" class="conrdenates-input" type="number" placeholder="Escalamento en x" required>
+                <input scaleY class="conrdenates-input" type="number" placeholder="Escalamiento en y" required>
                 <button class="transform-btn scale-btn">Escalamiento</button>
             </div>
             <div class="input-col">
                 <h1>Rotación </h1>
-                <input id="x3" class="conrdenates-input" type="number" placeholder="Rotación en x" required>
-                <input id="y3" class="conrdenates-input" type="number" placeholder="Rotación en y" required>
+                <input id="rotateAngle" class="conrdenates-input" type="number" placeholder="Rotación " required>
+                <div></div><div></div>
                 <button class="transform-btn rotate-btn">Rotación</button>
             </div>
+            <div class="input-col">
+                <h1>Sesgo </h1>
+                <input id="shearX" class="conrdenates-input" type="number" placeholder="Sesgo en x" required>
+                <input id="shearY" class="conrdenates-input" type="number" placeholder="Sesgo en y" required>
+                <button class="transform-btn shear-btn">Sesgo</button>
+            </div>
+
         </section>
-
-        <!-- <div class="draw">
-            <button class="draw-btn" type="submit">Dibujar poligono</button>
-        </div> -->
-
     </main>
 </body>
 <script src="main.js"></script>

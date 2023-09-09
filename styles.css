@@ -12,8 +12,9 @@
 body {
     background-color: #e5e5f7;
     opacity: 0.8;
-    background-image: linear-gradient(#364b43 1px, transparent 1px), linear-gradient(to right, #364b43 1px, #e5e5f7 1px);
+    background-image: linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #e5e5f7 1px);
     background-size: 20px 20px;
+    overflow-x: hidden;
 }
 
 main {
@@ -21,7 +22,7 @@ main {
 }
 
 .title {
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     margin: 3rem 0;
 }
@@ -37,7 +38,7 @@ main {
 }
 
 ::selection {
-    background-color: #364b43;
+    background-color: #444cf7;
     color: white;
 }
 
@@ -55,14 +56,16 @@ canvas {
     /* flex-wrap: wrap; */
     /* width: 90%; */
     margin-bottom: 10%;
-
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .input-col {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    /*  width: 33%; */
     row-gap: 3rem;
+
 }
 
 
@@ -81,7 +84,7 @@ canvas {
     background-color: rgba(255, 255, 255, 0.686);
     font-size: 1rem;
     margin: 0 auto;
-    color: #364b43;
+    color: #444cf7;
 }
 
 
@@ -124,21 +127,21 @@ canvas {
 /* ------------------------------------------draw button ------------------------------------------*/
 
 .draw {
-   display: flex;
-   justify-content: center;
-   margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
 }
 
 .draw-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #364b43;
+    background-color: #444cf7;
     font-size: 16px;
     cursor: pointer;
     color: #7fdab8;
     font-style: bold;
-   font-size: 1.2rem;
+    font-size: 1.2rem;
     display: inline;
     text-align: center;
 
@@ -150,5 +153,48 @@ canvas {
 }
 
 .draw-btn:active {
-    background-color: #364b43;
+    background-color: #444cf7;
+}
+
+@media (max-width: 900px) {
+    .input-col {
+        width: 100%;
+    }
+
+    #planoCartesiano {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .inputs-container {
+        margin: 1rem 0;
+    }
+
+    .input-col {
+        width: 100%;
+    }
+
+    .input-col h1 {
+        font-size: 1.5rem;
+    }
+
+    .conrdenates-input {
+        height: 35px;
+        font-size: .8rem;
+    }
+
+    .transform-btn {
+        font-size: .8rem;
+        padding: .5rem 1rem;
+    }
+
+    .draw-btn {
+        font-size: .8rem;
+        padding: .5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
 }
